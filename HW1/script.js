@@ -15,9 +15,9 @@ alert("Задание 2. Площадь кольца: " + ringArea + " cm2");}
 
 //Задание 3
 function z3 () {
-let firstNumber = document.getElementById('firstNumber').value;//("Введите 1е число");
-let secondNumber = document.getElementById('secondNumber').value;//("Введите 2е число");
-let thirdNumber = document.getElementById('thirdNumber').value;//("Введите 3е число");
+let firstNumber = parseFloat(document.getElementById('firstNumber').value);//("Введите 1е число");\
+let secondNumber = parseFloat(document.getElementById('secondNumber').value);//("Введите 2е число");
+let thirdNumber = parseFloat(document.getElementById('thirdNumber').value);//("Введите 3е число");
 let minNumber = firstNumber;
 if (secondNumber < minNumber) {
     minNumber = secondNumber;
@@ -25,12 +25,16 @@ if (secondNumber < minNumber) {
 if (thirdNumber < minNumber) {
     minNumber = thirdNumber;
 }
-alert("Наименьшее число: " + minNumber);}
+console.log(minNumber);
+alert("Наименьшее число: " + minNumber);
+}
 
 //Задание 4
 function z4 () {
 let m = document.getElementById('m').value;//("Введите число в переменную m");
+console.log(m);
 let n = document.getElementById('n').value;//("Введите число в переменную n");
+console.log(n);
 if (Math.abs(m - 10) < Math.abs(n - 10)) {
     alert("Ближе к 10 число " + m);
 }
