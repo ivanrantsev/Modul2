@@ -1,0 +1,44 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    margin: 20px auto 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    column-count: 2;
+}
+ h2 {
+    text-align: center;
+ }
+
+button {
+    width: 50%;
+    margin: 5px auto;
+}
+
+input {
+    width: 80px;
+    margin: 16px auto;
+}
+
+fieldset {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    border-width: 1px;
+}
+
+fieldset div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+fieldset:last-child input {
+    margin-top: 0;
+}
