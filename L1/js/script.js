@@ -130,5 +130,5 @@ console.log(num2); //3
  console.log(data);
 
  let answer = confirm("Questions?");
- console.log(answer)
+ console.log(answer);
 
