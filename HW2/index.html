@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <h2>Задание 1</h2>
+            <div>
+                <p>Выберите месяц</p>
+                <select id="month">
+                    <option>Январь</option>
+                    <option>Февраль</option>
+                    <option>Март</option>
+                    <option>Апрель</option>
+                    <option>Май</option>
+                    <option>Июнь</option>
+                    <option>Июль</option>
+                    <option>Август</option>
+                    <option>Сентябрь</option>
+                    <option>Октябрь</option>
+                    <option>Ноябрь</option>
+                    <option>Декабрь</option>
+                </select>
+            </div>
+            <button onclick="z1()">Ответ</button>
+        </fieldset>
+
+        <fieldset>
+            <h2>Задание 2</h2>
+            <div>
+                <p>Введите длину</p>
+                <input id="length" type="text" value="0" min = "0">
+            </div>
+            <div>
+                <p>Выберите единицу измерения</p>
+                <select id="unit">
+                    <option>дециметр</option>
+                    <option>километр</option>
+                    <option>метр</option>
+                    <option>сантиметр</option>
+                    <option>милиметр</option>
+                </select>
+            </div>
+            <button onclick="z2()">Ответ</button>
+        </fieldset>
+
+        <fieldset>
+            <h2>Задание 3</h2>
+            <div>
+                <p>Введите число</p>
+                <input id="number" type="number" value="0" min = "-999" max = "999">
+            </div>
+            <button onclick="z3()">Ответ</button>
+        </fieldset>
+
+        <fieldset>
+            <h2>Задание 4</h2>
+            <p>Вывести через console.log все числа от 1 до 100, с двумя исключениями. 
+                    Для чисел, нацело делящихся на 3, она должна выводить ‘Three’, 
+                    для чисел, делящихся на 5 (но не на 3) – ‘Five’,
+                    «ThreeFive» для всех чисел, которые делятся и на 3 и на 5.</p>
+        </fieldset>
+
+        <fieldset>
+            <h2>Задание 5</h2>
+            <div>
+                <p>Введите год</p>
+                <input id="year" type="number" value="0" min = "0">
+            </div>
+            <button onclick="z5()">Ответ</button>
+        </fieldset>
+
+        <fieldset>
+            <h2>Задание 6</h2>
+            <div>
+                <p>Введите количество тарелок</p>
+                <input id="plates" type="number" value="0" min = "0">
+            </div>
+            <div>
+                <p>Введите объем имеющегося моющего средства</p>
+                <input id="cleanser" type="text" value="0" min = "0">
+            </div>
+            <button onclick="z6()">Ответ</button>
+        </fieldset>
+    </form>
+</body>
+</html>
