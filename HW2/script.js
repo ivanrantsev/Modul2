@@ -105,18 +105,26 @@ function z6 () {
     console.log("Задание 6");
     let plates = parseInt(document.getElementById('plates').value),
         cleanser = parseInt(document.getElementById('cleanser').value);
-    for (let i = 1; i <= plates; i++) {
-        cleanser -= 0.5;
-        console.log(cleanser);
-        if (cleanser === 0 && plates === i) {
-            alert("Все помыли и средство закончилось!")
+    if (plates === 0) {
+        alert("Мыть нечего. Моющего средства осталось: "  + cleanser + " мл.");
+    }
+    else if (cleanser === 0) {
+        alert("Моющего средства нет. Тарелок осталось: " + plates);
+    }
+    else {
+        for (let i = 1; i <= plates; i++) {
+            cleanser -= 0.5;
+            console.log(cleanser);
+            if (cleanser === 0 && plates === i) {
+                alert("Все помыли и средство закончилось!")
+            }
+            else if (cleanser === 0) {
+                alert("Тарелок осталось: " + (plates - i));
+                break;
+            }
+            else if (plates === i) {
+                alert("Моющего средства осталось: "  + cleanser + " мл.");
+            } 
         }
-        else if (cleanser === 0) {
-            alert("Тарелок осталось: " + (plates - i));
-            break;
-        }
-        else if (plates === i) {
-            alert("Моющего средства осталось: "  + cleanser + " мл.");
-        } 
     }
 }
