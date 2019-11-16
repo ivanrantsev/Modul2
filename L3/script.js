@@ -125,3 +125,7 @@ for (let i = 0; i < arrNum.length-1; i++) {
 }
 console.log(arrNum);
 
+let hours = 
+
+
+
