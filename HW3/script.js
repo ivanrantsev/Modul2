@@ -8,42 +8,23 @@ console.log(C);
 
 
 //Задание 2
-let area = [null, null, 0, null, 1, 0, 1, null, 1],
-    rowContent1 = ``,
-    rowContent2 = ``,
-    rowContent3 = ``,
-    box = '';
-for (let i = 0; i < 3; i++) {
-    box = '';
-    if (area[i] === 0) {
-        box = '0';
+let arr = [null, null, 0, null, 1, 0, 1, null, 1];
+for (let i = 0; i <= 2; i++) {
+    let rowContent = '';
+    for (let j = i * 3; j <= i * 3 + 2; j++) {
+        switch (arr[j]) {
+            case 0: 
+                rowContent += '<td>0</td>';
+                break;
+            case 1: 
+                rowContent += '<td>X</td>';
+                break;
+            default: 
+                rowContent += '<td></td>';
+        }
     }
-    else if (area[i] === 1) {
-        box = 'X';
-    }
-    rowContent1 += `<td>${box}</td>`;
+    document.write(`<tr>${rowContent}</tr>`);
 }
-for (let i = 3; i < 6; i++) {
-    box = '';
-    if (area[i] === 0) {
-        box = '0';
-    }
-    else if (area[i] === 1) {
-        box = 'X';
-    }
-    rowContent2 += `<td>${box}</td>`;
-}
-for (let i = 6; i < 9; i++) {
-    box = '';
-    if (area[i] === 0) {
-        box = '0';
-    }
-    else if (area[i] === 1) {
-        box = 'X';
-    }
-    rowContent3 += `<td>${box}</td>`;
-}
-document.write(`<table><tr>${rowContent1}</tr><tr>${rowContent2}</tr><tr>${rowContent3}</tr></table>`);
 
 
 //Задание 3
