@@ -66,6 +66,30 @@ console.log(count - 1);
 
 
 //Задание 5
+console.log("Задание 5");
+let weights = [2,7,4,1,8,1];
+while (weights.length > 1) {
+    console.log(weights);
+    let max1 = Math.max(...weights),
+        index1 = weights.indexOf(max1),
+        temp1 = weights.splice(index1,1),
+        max2 = Math.max(...weights),
+        index2 = weights.indexOf(max2),
+        temp2 = weights.splice(index2,1);
+    if (temp1[0] !== temp2[0]) {
+        weights.push(Math.abs(temp1[0] - temp2[0]));
+    }
+}
+if (weights.length === 0) {
+    console.log(0);
+}
+else {
+    console.log(weights[0]);
+}
+
+
+/*
+var time = performance.now();
 let weights = [2,7,4,1,8,1];
 while (weights.length > 1) {
     for (let i = 0; i < weights.length-1; i++) {
@@ -88,3 +112,5 @@ if (weights.length === 0) {
 else {
     console.log(weights[0]);
 }
+time = performance.now() - time;
+console.log('Время выполнения = ', time);*/
