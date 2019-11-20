@@ -63,3 +63,28 @@ for (let i1 = 0; i1 < 10; i1++) {
     }
 }
 console.log(count - 1);
+
+
+//Задание 5
+let weights = [2,7,4,1,8,1];
+while (weights.length > 1) {
+    for (let i = 0; i < weights.length-1; i++) {
+        for (let j = 0; j < weights.length - 1 - i; j++) {
+            if(weights[j] > weights[j + 1]) {
+                let temp1 = weights[j];
+                weights[j] = weights[j + 1];
+                weights[j + 1] = temp1;
+            }
+        }
+    }
+    let temp = weights.splice(-2);
+    if (temp[0] !== temp[1]) {
+        weights.push(Math.abs(temp[0] - temp[1]));
+    }
+}
+if (weights.length === 0) {
+    console.log(0);
+}
+else {
+    console.log(weights[0]);
+}
