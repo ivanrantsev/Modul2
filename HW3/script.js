@@ -66,6 +66,8 @@ console.log(count - 1);
 
 
 //Задание 5
+/*
+var time = performance.now();
 console.log("Задание 5");
 let weights = [2,7,4,1,8,1];
 while (weights.length > 1) {
@@ -86,7 +88,8 @@ if (weights.length === 0) {
 else {
     console.log(weights[0]);
 }
-
+time = performance.now() - time;
+console.log('Время выполнения = ', time);
 
 /*
 var time = performance.now();
@@ -113,4 +116,25 @@ else {
     console.log(weights[0]);
 }
 time = performance.now() - time;
-console.log('Время выполнения = ', time);*/
+console.log('Время выполнения = ', time);
+*/
+///////////////
+var time = performance.now();
+let weights = [2,7,4,1,8,1];
+while (weights.length > 1) {
+    weights.sort(function(a,b){ 
+        return a - b
+      });
+    let temp = weights.splice(-2);
+    if (temp[0] !== temp[1]) {
+        weights.push(Math.abs(temp[0] - temp[1]));
+    }
+}
+if (weights.length === 0) {
+    console.log(0);
+}
+else {
+    console.log(weights[0]);
+}
+time = performance.now() - time;
+console.log('Время выполнения = ', time);
