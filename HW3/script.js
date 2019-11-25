@@ -66,17 +66,26 @@ console.log(count - 1);
 
 
 //Задание 5
-/*
 var time = performance.now();
 console.log("Задание 5");
 let weights = [2,7,4,1,8,1];
 while (weights.length > 1) {
     console.log(weights);
-    let max1 = Math.max(...weights),
-        index1 = weights.indexOf(max1),
+    let max1 = weights[0];
+    for (let i = 1; i < weights.length; i++) {
+        if (weights[i] > max1) {
+            max1 = weights[i];
+        }
+    }
+    let index1 = weights.indexOf(max1),
         temp1 = weights.splice(index1,1),
-        max2 = Math.max(...weights),
-        index2 = weights.indexOf(max2),
+        max2 = weights[0];
+    for (let i = 1; i < weights.length; i++) {
+        if (weights[i] > max2) {
+            max2 = weights[i];
+        }
+    }
+    let index2 = weights.indexOf(max2),
         temp2 = weights.splice(index2,1);
     if (temp1[0] !== temp2[0]) {
         weights.push(Math.abs(temp1[0] - temp2[0]));
@@ -91,35 +100,9 @@ else {
 time = performance.now() - time;
 console.log('Время выполнения = ', time);
 
-/*
-var time = performance.now();
-let weights = [2,7,4,1,8,1];
-while (weights.length > 1) {
-    for (let i = 0; i < weights.length-1; i++) {
-        for (let j = 0; j < weights.length - 1 - i; j++) {
-            if(weights[j] > weights[j + 1]) {
-                let temp1 = weights[j];
-                weights[j] = weights[j + 1];
-                weights[j + 1] = temp1;
-            }
-        }
-    }
-    let temp = weights.splice(-2);
-    if (temp[0] !== temp[1]) {
-        weights.push(Math.abs(temp[0] - temp[1]));
-    }
-}
-if (weights.length === 0) {
-    console.log(0);
-}
-else {
-    console.log(weights[0]);
-}
-time = performance.now() - time;
-console.log('Время выполнения = ', time);
-*/
-///////////////
-var time = performance.now();
+
+////////////////
+/*var time = performance.now();
 let weights = [2,7,4,1,8,1];
 while (weights.length > 1) {
     weights.sort(function(a,b){ 
@@ -137,4 +120,4 @@ else {
     console.log(weights[0]);
 }
 time = performance.now() - time;
-console.log('Время выполнения = ', time);
+console.log('Время выполнения = ', time);*/
