@@ -34,17 +34,21 @@ else {
     console.log("Пароль не удовлетворяет требованиям");
 }
 
-/*/ЗАДАНИЕ 4 /// не решил пока что
+//ЗАДАНИЕ 4
 console.log("Задание 4");
 let stroka = "Понедельник Вторник Среда Четверг Пятница Суббота Воскресенье",
-    errorWord = "срида",
-    regExp1 = /[А-Я]+/ig,
-    arr = stroka.match(regExp1);
+    errorWord = "Срида",
+    arr = stroka.split(" ");
 for (let i = 0; i < arr.length; i++) {
+    let count = 0;
     for (let j = 0; j < arr[i].length; j++) {
-        let newWord = arr[i],
-        newWord1 = arr[i].replace(newWord[j], );
-        //console.log(newWord1);
+        if (arr[i][j] === errorWord[j]) {
+            count++;
+        }
+        if (j - count > 0) 
+            break;
+        if (count === errorWord.length - 1) 
+            console.log(arr[i]);
     }
+    
 }
-*/
