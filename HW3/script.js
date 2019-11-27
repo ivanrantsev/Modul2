@@ -88,7 +88,7 @@ while (weights.length > 1) {
     let index2 = weights.indexOf(max2),
         temp2 = weights.splice(index2,1);
     if (temp1[0] !== temp2[0]) {
-        weights.push(Math.abs(temp1[0] - temp2[0]));
+        weights.push(temp1[0] - temp2[0]);
     }
 }
 if (weights.length === 0) {
