@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #traffic-light {
+            background-color: black;
+            width: 26px;
+        }
+        .light {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 100%;
+            margin: 2px;
+            opacity: 0.1;
+        }
+        .active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body onload="startTime()">
+    <p id="time"></p>
+    <div class="catalog" style="display: flex; border: 1px solid black; width: 900px; flex-flow: wrap;"></div>
+    <div id="traffic-light">
+        <div style="background-color:red" class="light 1 active"></div>
+        <div style="background-color:yellow" class="light 2"></div>
+        <div style="background-color:green" class="light 3"></div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
