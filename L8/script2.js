@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    /*let presentContainer = document.getElementById("present_container");
+    let presentContainer = document.getElementById("present_container");
     presentContainer.addEventListener("click", showPresent);
 
 
@@ -8,21 +8,24 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < tds.length; i++) {
         tds[i].addEventListener("click", calcAction);
     }
-*/
+
 
     let shape = document.getElementById("box");
-    document.addEventListener("keydown", function(e) {
+    document.addEventListener('keydown', function(e){
         if (e.keyCode == 37) { //keycode 37 - стрелочка влево на клаве
-            shape.style.left = (parseInt(shape.style.left) - 5) + " px";
+            let curr = parseInt(shape.style.left);
+            if (curr !== 0)
+                shape.style.left = (parseInt(shape.style.left) - 5) + "px";
         } else if (e.keyCode == 39) { 
-                shape.style.left = (parseInt(shape.style.left) + 5) + " px";
+                shape.style.left = (parseInt(shape.style.left) + 5) + "px";
         } else if (e.keyCode == 40) {
-                shape.style.top = (parseInt(shape.style.top) + 5) + " px";
+                shape.style.top = (parseInt(shape.style.top) + 5) + "px";
         } else if (e.keyCode == 38) {
-                shape.style.top = (parseInt(shape.style.top) - 5) + " px";
+                shape.style.top = (parseInt(shape.style.top) - 5) + "px";
         }
+        console.log(e.key);
+        console.log(e.code);
     });
-}/*
 });
 function showPresent(e) {
     let clickElem = e.target,
@@ -62,4 +65,4 @@ function calcAction(e) {
     
 }
 
-*/
+
