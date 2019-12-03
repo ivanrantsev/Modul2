@@ -46,12 +46,9 @@ function getCatalog(arrItem) {
 getCatalog(arrItems);
 
 
-
 //ЗАДАНИЕ 3 //
 var scaleElem = document.getElementById('par_mak');
 var addClass = true;
-function getLight() {
-    
 
 setInterval(addClassToScaleElem, 1000);
 
@@ -63,9 +60,24 @@ function addClassToScaleElem( ) {
     classList.remove('infi_anim');
   }
   addClass = !addClass;
-}
-}
 
+}
+setInterval(addClass,2000);
+function addClass() {
+    let redClassList = getElementsByClassName("red").classList,
+        yellowClassList = getElementsByClassName("yellow").classList,
+        greenClassList = getElementsByClassName("yellow").classList,
+        activeRed = true,
+        activeYellow = false,
+        activeGreen = false,
+        up = true;
+    if (activeRed) {
+        up = true;
+        activeYellow = false;
+        activeGreen = false;
+
+    }
+} 
 /*
 //ЗАДАНИЕ 4
 console.log("Задание 4");
