@@ -4,6 +4,7 @@ function startTime() {
         h = time.getHours(),
         m = time.getMinutes(),
         s = time.getSeconds();
+    h = addNull(h);
     m = addNull(m);
     s = addNull(s);
     document.getElementById('time').innerHTML = "<span style = 'color: red;'>" + h + "</span>" + ":" + "<span style = 'color: blue;'>" + m + "</span>" + ":" + "<span style = 'color: green;'>" + s + "</span>";
@@ -47,55 +48,84 @@ getCatalog(arrItems);
 
 
 //ЗАДАНИЕ 3 //
-var scaleElem = document.getElementById('par_mak');
-var addClass = true;
+function getTrafficLight () {
+   
+    let green = document.getElementById("green"),
+        red = document.getElementById("red"),
+        yellow = document.getElementById("yellow");
 
-setInterval(addClassToScaleElem, 1000);
+    red.style.opacity = 1;
+    green.style.opacity = 0.2;
+    yellow.style.opacity = 0.2;
 
-function addClassToScaleElem( ) {
-  var classList = scaleElem.classList;
-  if (addClass) {
-    classList.add('infi_anim');
-  } else {
-    classList.remove('infi_anim');
-  }
-  addClass = !addClass;
+    setTimeout(function () {
+        green.style.opacity = 0.2;
+        red.style.opacity = 0.2;
+        yellow.style.opacity = 1;
+    },2000);
+
+    setTimeout(function () {
+        
+        green.style.opacity = 1;
+        red.style.opacity = 0.2;
+        yellow.style.opacity = 0.2;
+    },4000);
+
+    setTimeout(function () {
+        
+        green.style.opacity = 0.2;
+        red.style.opacity = 0.2;
+        yellow.style.opacity = 1;
+    },6000);
+
 
 }
-setInterval(addClass,2000);
-function addClass() {
-    let redClassList = getElementsByClassName("red").classList,
-        yellowClassList = getElementsByClassName("yellow").classList,
-        greenClassList = getElementsByClassName("yellow").classList,
-        activeRed = true,
-        activeYellow = false,
-        activeGreen = false,
-        up = true;
-    if (activeRed) {
-        up = true;
-        activeYellow = false;
-        activeGreen = false;
 
-    }
-} 
-/*
+setInterval("getTrafficLight()", 8000);
+
+getTrafficLight();
+
+
+
 //ЗАДАНИЕ 4
-console.log("Задание 4");
-let f = 1;
-function getFaktorial(n) {
-    if (n > 0) {
-        f *= n;
-        getFaktorial(n-1);
+function getTimeToNextYear() {
+    let now = new Date(),
+        newYear = new Date(now.getFullYear()+1, 0, 1),
+        diff = newYear - now;
+    diff = Math.floor(diff / 1000); 
+    let d = Math.floor(diff/86400),
+        h = Math.floor(diff % 86400 / 3600),
+        m = Math.floor(diff % 86400 % 3600 / 60);
+        s = diff % 86400 % 3600 % 60;
+    let day = " дней ",
+        hours = " часов ",
+        minutes = " минут ",
+        seconds = " секунд";
+    if (d%10 === 1) {
+        day = " день ";
+    } else if (d%10 >= 2 && d%10 <= 4) {
+        day = " дня ";
     }
-    return f;
-}
-console.log(getFaktorial(3));
-
-//ЗАДАНИЕ 5
-console.log("Задание 5");
-let arr = [ { 'price' : 10, 'count' : 2 }, { 'price' : 5, 'count' : 5}, 
-{ 'price' : 8, 'count' : 5 }, { 'price' : 12, 'count' : 4 }, { 'price' : 8, 'count' : 4},];
-arr.sort(function(n1,n2) {
-    return n1.price - n2.price;
-});
-console.log(arr);*/
+    if (h%10 === 1) {
+        hours = " час ";
+    } else if (h%10 >= 2 && h%10 <= 4) {
+        hours = " часа ";
+    }
+    if (m%10 === 1) {
+        minutes = " минута ";
+    } else if (m%10 >= 2 && m%10 <= 4) {
+        minutes = " минуты ";
+    }
+    if (s%10 === 1) {
+        seconds = " секунда";
+    } else if (s%10 >= 2 && s%10 <= 4) {
+        seconds = " секунды";
+    }
+    h = addNull(h);
+    m = addNull(m);
+    d = addNull(d);
+    s = addNull(s);
+    document.getElementById('newYear').innerHTML = "<p>" + d + day + h + hours + m + minutes + s + seconds + "</p>";
+    setTimeout('getTimeToNextYear()', 1000);
+  }
+  
