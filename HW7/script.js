@@ -37,7 +37,8 @@ function getCatalog(arrItem) {
     arrItem.forEach(element => {
         let goods = document.createElement("div");
         goods.style.cssText = "width:200px; margin: 12px";
-        goods.innerHTML = `<img style="width:200px" src="${element['img']}">
+        goods.innerHTML = `
+        <img style="width:200px" src="${element['img']}">
         <h2><strong>${element['name']}</h2>
         <p>${element['description']}</p>
         <h2>Цена: <strong>${element['price']}</h2>`;
@@ -101,31 +102,31 @@ function getTimeToNextYear() {
         hours = " часов ",
         minutes = " минут ",
         seconds = " секунд";
-    if (d%10 === 1) {
+    if (d%10 === 1 && (d%100 < 11 || d%100 > 20)) {
         day = " день ";
-    } else if (d%10 >= 2 && d%10 <= 4) {
+    } else if (d%10 >= 2 && d%10 <= 4 && (d%100 < 11 || d%100 > 20)) {
         day = " дня ";
     }
-    if (h%10 === 1) {
+    if (h%10 === 1 && (h%100 < 11 || h%100 > 20)) {
         hours = " час ";
-    } else if (h%10 >= 2 && h%10 <= 4) {
+    } else if (h%10 >= 2 && h%10 <= 4 && (h%100 < 11 || h%100 > 20)) {
         hours = " часа ";
     }
-    if (m%10 === 1) {
+    if (m%10 === 1 && (m%100 < 11 || m%100 > 20)) {
         minutes = " минута ";
-    } else if (m%10 >= 2 && m%10 <= 4) {
+    } else if (m%10 >= 2 && m%10 <= 4 && (m%100 < 11 || m%100 > 20)) {
         minutes = " минуты ";
     }
-    if (s%10 === 1) {
+    if (s%10 === 1 && (s%100 < 11 || s%100 > 20)) {
         seconds = " секунда";
-    } else if (s%10 >= 2 && s%10 <= 4) {
+    } else if (s%10 >= 2 && s%10 <= 4 && (s%100 < 11 || s%100 > 20)) {
         seconds = " секунды";
     }
     h = addNull(h);
     m = addNull(m);
     d = addNull(d);
     s = addNull(s);
-    document.getElementById('newYear').innerHTML = "<p>" + d + day + h + hours + m + minutes + s + seconds + "</p>";
+    document.getElementById('newYear').innerHTML = "<p> Врем до Нового года: " + d + day + h + hours + m + minutes + s + seconds + "</p>";
     setTimeout('getTimeToNextYear()', 1000);
   }
   
