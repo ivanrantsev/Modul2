@@ -30,74 +30,55 @@ function increaseCount (e) {
 
 
 //ЗАДАНИЕ 3 
- let user = {
-     photo: "img.png",
-     name: "Name",
-     lastName: "Lastname",
-     comment: ""
- };
-
- let sendButton = document.getElementById("sendButton");
- sendButton.addEventListener("click", sendButton);
+let sendButton = document.getElementById("sendButton");
+sendButton.addEventListener("click", sendComment);
 
  
- function sendComment(arrItem) {
-    let commentList = document.getElementById("commentList");
-    
-    arrItem.forEach(element => {
-        let str = document.createElement("div");
-        str.style.cssText = "width:200px; margin: 10px";
-        str.innerHTML = `
-        <img style="width:200px" src="${element['img']}">
-        <p><strong>${element['name']}</p>
-        <p>${element['subname']}</p>
-        <p>${element['comment']}</p>`;
-        commentList[0].prepend(str);
-    });
+function sendComment() {
+    let user = {
+        photo: "img.png",
+        name: "Name",
+        lastName: "Lastname",
+        },
+    commentList = document.getElementById("commentList");
+    if (commentArea.value !== "") {
+        commentList.insertAdjacentHTML("afterbegin", `
+                            <div style='width: 298px; display: flex; border: 1px solid black; margin: 10px 0'>
+                            <img style='width: 50px; height: 50px; margin: 0 10px' src='${user.photo}'>
+                            <p style='margin: 10px 13px 10px 2px'>${user.name}<br>${user.lastName}</p>
+                            <p style='flex: 1; word-wrap: break-word; width: 50%'>${commentArea.value}</p>
+                            </div>`);
+        commentArea.value = "";
+    }
 }
 
 
 
-/*
+
 //ЗАДАНИЕ 4
-function getTimeToNextYear() {
-    let now = new Date(),
-        newYear = new Date(now.getFullYear()+1, 0, 1),
-        diff = newYear - now;
-    diff = Math.floor(diff / 1000); 
-    let d = Math.floor(diff/86400),
-        h = Math.floor(diff % 86400 / 3600),
-        m = Math.floor(diff % 86400 % 3600 / 60);
-        s = diff % 86400 % 3600 % 60;
-    let day = " дней ",
-        hours = " часов ",
-        minutes = " минут ",
-        seconds = " секунд";
-    if (d%10 === 1 && (d%100 < 11 || d%100 > 20)) {
-        day = " день ";
-    } else if (d%10 >= 2 && d%10 <= 4 && (d%100 < 11 || d%100 > 20)) {
-        day = " дня ";
-    }
-    if (h%10 === 1 && (h%100 < 11 || h%100 > 20)) {
-        hours = " час ";
-    } else if (h%10 >= 2 && h%10 <= 4 && (h < 11 || h > 20)) {
-        hours = " часа ";
-    }
-    if (m%10 === 1 && (m < 11 || m > 20)) {
-        minutes = " минута ";
-    } else if (m%10 >= 2 && m%10 <= 4 && (m < 11 || m > 20)) {
-        minutes = " минуты ";
-    }
-    if (s%10 === 1 && (s < 11 || s > 20)) {
-        seconds = " секунда";
-    } else if (s%10 >= 2 && s%10 <= 4 && (s < 11 || s > 20)) {
-        seconds = " секунды";
-    }
-    h = addNull(h);
-    m = addNull(m);
-    d = addNull(d);
-    s = addNull(s);
-    document.getElementById('newYear').innerHTML = "<p> Врем до Нового года: " + d + day + h + hours + m + minutes + s + seconds + "</p>";
-    setTimeout('getTimeToNextYear()', 1000);
-  }
-  */
+let books = [ {
+    title: "Евгений Онегин",
+    author: "Пушкин",
+    pages: 123
+},
+{
+    title: "Война и мир",
+    author: "Толстой",
+    pages: 1014
+},
+{
+    title: "Мастер и Маргарита",
+    author: "Булгаков",
+    pages: 333
+},];
+
+function getTable(e) {
+    books.forEach(element => {
+        let booksTable = document.getElementById("books");
+        booksTable.insertAdjacentHTML("beforeend", `
+        <tr><td>${element.title}</td><td>${element.author}</td><td>${element.pages}</td></tr>
+        `);
+    });
+}
+
+getTable(books);

@@ -16,10 +16,25 @@ button {
     height: 25px;
 }
 
-#comment {
-    margin: 50px 0 10px;
-    width: 250px;
-    height: 50px;
+.page {
+    margin: 50px 0;
+}
+
+#commentArea {
+    height: 100px;
+}
+
+#commentList {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     overflow: auto;
-    display: block;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
 }
