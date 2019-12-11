@@ -1,0 +1,32 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body, .slider {
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+    position: relative;
+}
+
+.slider li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+}
+
+.slider li.active {
+    opacity: 1;
+}
+
+#slider, #slider2 {
+    width: 500px;
+    height: 500px;
+}
