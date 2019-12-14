@@ -51,7 +51,7 @@ $(document).ready(function(){
     $("#marker").css({
       "width": (gemSize - 10) +"px",
       "height": (gemSize - 10) +"px",
-      "border": "5px solid white",
+      "border": "5px solid blue",
       "border-radius": '50px',
       "position": "absolute"
     }).hide();
